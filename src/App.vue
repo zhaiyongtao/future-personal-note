@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
+import Test from '@/views/test';
 </script>
 
 <template>
@@ -17,11 +18,11 @@ import HelloWorld from './components/HelloWorld.vue';
       </nav>
     </div>
   </header>
-
+  <Test></Test>
   <RouterView />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 header {
   line-height: 1.5;
   max-height: 100vh;
