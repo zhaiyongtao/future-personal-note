@@ -1,36 +1,32 @@
-//font-size
-$--huge-title-font-size: 72px;
-$--display-title-font-size: 48px;
-$--title-1-font-size: 32px;
+@import "./variable.scss";
 
-$--body-font-size: 16px;
-
-$--caption-1-font-size: 14px;
-$--caption-2-font-size: 12px;
-
-
-
-// font-weight
-$--font-weight-bold: 700;
-$--font-weight-medium: 500;
-$--font-weight-regular: 400;
-
-// background-color
-
-$--bg-color-light: #fff;
-$--bg-color-dark: #1A1B1F;
-
-$--bg-color-brand: #F8D3E1;
-$--bg-color-content-A: rgba(255, 255, 255, 0.1);
-$--bg-color-content-B: rgba(255, 255, 255, 0.6);
-$--bg-color-content-C: rgba(255, 255, 255, 0.5);
-
-// color
-$--color-brand-dark: #F8D3E1;
-$--color-primary-light:#FFFFFF;
-$--color-primary-dark: #1A1B1F;
+$--color-background: $--bg-color-light;
+$--color-text: $--color-primary-dark;
+$--color-title-text: $--color-primary-dark;
+$--color-card-background: $--bg-color-content-D;
+$--color-card-comment-background: $--bg-color-content-C;
+$--color-card-title-color: $--color-primary-dark;
+$--color-card-content-color: $--color-primary-dark-content-text;
+$--color-card-footer-color: $--color-brand-dark;
+$--color-input-background: $--bg-color-content-C;
+$--color-input-text: $--color-primary-dark-content-text;
+$--color-input-placeholder: $--color-primary-light-placeholder-text;
+$--color-input-icon-background: $--color-primary-dark;
+$--color-btn-background: $--color-primary-dark;
 
 
-
-
-
+@media (prefers-color-scheme: dark) {
+  $--color-background: $--color-primary-dark;
+  $--color-text: $--color-primary-light;
+  $--color-title-text: $--color-primary-light;
+  $--color-card-background: $--bg-color-content-E;
+  $--color-card-comment-background: $--bg-color-content-C;
+  $--color-card-title-color: $--color-primary-light;
+  $--color-card-content-color: $--color-primary-light-content-text;
+  $--color-card-footer-color: $--color-brand-dark;
+  $--color-input-background: $--bg-color-content-C;
+  $--color-input-text: $--color-primary-light-content-text;
+  $--color-input-placeholder: $--color-primary-dark-placeholder-text;
+  $--color-input-icon-background: $--color-brand-dark;
+  $--color-btn-background: $--color-brand-dark;
+}
