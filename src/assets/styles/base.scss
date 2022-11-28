@@ -1,5 +1,5 @@
 @import "reset.css";
-@import "../assets/styles/theme.scss";
+@import "theme";
 *,
 *::before,
 *::after {
@@ -19,4 +19,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  height: 100%;
 }

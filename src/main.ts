@@ -4,7 +4,7 @@ import 'amfe-flexible/index.js';
 import App from './App.vue';
 import router from './router';
 
-import './assets/main.scss';
+import './assets/styles/main.scss';
 import './utils/rem.js';
 
 const app = createApp(App);
