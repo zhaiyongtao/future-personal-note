@@ -1,6 +1,8 @@
 import { defineComponent, ref } from 'vue';
 import { RouterView } from 'vue-router';
 import PageWrapper from '@/components/PageWrapper';
+import { getHomeData } from '@/service';
+import { NButton } from 'naive-ui';
 export default defineComponent({
   name: 'Home',
   props: {},
@@ -12,6 +14,11 @@ export default defineComponent({
     const name = ref<string>('zyt');
     expose({ name: name.value, handleClick });
     console.log('slots ==> ', slots);
+
+    const handleClickTestRequest = async () => {
+      const res = await getHomeData();
+      console.log('res ==> ', res);
+    };
     return () => {
       return (
         <>
@@ -19,7 +26,7 @@ export default defineComponent({
             {{
               content: () => (
                 <div>
-                  12
+                  <NButton onClick={handleClickTestRequest}>test</NButton>
                   {/* <RouterView /> */}
                 </div>
               ),

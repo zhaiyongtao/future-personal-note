@@ -1,8 +1,11 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios';
 interface HData<T> {
   data: T;
-  returnCode: string;
+  resultCode: string;
   success: boolean;
+  code: number;
+  message: string;
+  displayMessage: string;
   [key: string]: any;
 }
 interface InterceptorHooks {
@@ -48,6 +51,7 @@ class HRequest {
       this.instance
         .request<any, HData<T>>(config)
         .then((res) => {
+          console.log('2 ==> ', 2);
           resolve(res.data);
         })
         .catch((err) => {

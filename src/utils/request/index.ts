@@ -17,14 +17,18 @@ const addPending = (config: HRequestConfig) => {
     qs.stringify(config.params),
     qs.stringify(config.data)
   ].join('&');
-  config.cancelToken =
-    config.cancelToken ||
-    new axios.CancelToken((cancel) => {
-      if (!pending.has(url)) {
-        // 如果 pending 中不存在当前请求，则添加进去
-        pending.set(url, cancel);
-      }
+  if (pending.has(url)) {
+    // 如果 pending 中不存在当前请求，则添加进去
+    config.cancelToken = new axios.CancelToken((c) =>
+      c(`重复的请求被主动拦截: ${config.url} + ${config.data} + ${config.params}`)
+    );
+  } else {
+    let c: any = null;
+    config.cancelToken = new axios.CancelToken((cancel) => {
+      c = cancel;
     });
+    pending.set(url, c);
+  }
 };
 /**
  * 移除请求
@@ -55,11 +59,13 @@ export const clearPending = () => {
   pending.clear();
 };
 
+// TODO 基础配置
 const request = new HRequest({
-  baseURL: '',
-  timeout: 10000,
+  // baseURL: 'http://127.0.0.1:4523/m1/2005353-0-default',
+  timeout: 100000,
   // 跨域时允许携带凭证
   withCredentials: true,
+
   interceptorHooks: {
     requestInterceptor: (config) => {
       removePending(config); // 在请求开始前，对之前的请求做检查取消操作
@@ -79,7 +85,7 @@ const request = new HRequest({
     },
     responseInterceptor: (res) => {
       const { data, config, status } = res; // 解构
-      if (status === 200) {
+      if (status === 200 && data.code === 200) {
         // 判断登陆信息是否失效
         if (data.returnCode === ResultCode.OVERDUE) {
           // 登录信息失效，应跳转到登录页面，并清空本地的token
@@ -92,11 +98,12 @@ const request = new HRequest({
         // 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
         if (data.returnCode && data.returnCode !== ResultCode.SUCCESS) {
           alert(data); // 此处也可以使用组件提示报错信息
-          return Promise.reject(res);
+          return Promise.reject(data);
         }
-        return Promise.resolve(res);
+        console.log('1 ==> ', 1);
+        return Promise.resolve(data);
       } else {
-        return Promise.reject(res);
+        return Promise.reject(data);
       }
     },
     responseInterceptorCatch: (err) => {
