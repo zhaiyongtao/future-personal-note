@@ -11,6 +11,8 @@ export default defineComponent({
     const handleClick = () => {
       emit('changeName', '张三');
     };
+    const env = import.meta.env.VITE_NODE_ENV;
+    console.log(env);
     const name = ref<string>('zyt');
     expose({ name: name.value, handleClick });
     console.log('slots ==> ', slots);
@@ -30,7 +32,7 @@ export default defineComponent({
             {{
               content: () => (
                 <div>
-                  <NButton onClick={handleClickTestRequest}>test</NButton>
+                  <NButton onClick={handleClickTestRequest}>{env}</NButton>
                   {/* <RouterView /> */}
                 </div>
               ),

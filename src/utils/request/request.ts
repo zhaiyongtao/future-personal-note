@@ -51,7 +51,7 @@ class HRequest {
       this.instance
         .request<any, HData<T>>(config)
         .then((res) => {
-          console.log('2 ==> ', 2);
+          console.log('2 ==> ', res);
           resolve(res.data);
         })
         .catch((err) => {

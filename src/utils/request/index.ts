@@ -81,6 +81,7 @@ const request = new HRequest({
       return config;
     },
     requestInterceptorCatch: (err) => {
+      console.log('err ==>!!! ', err);
       return Promise.reject(err);
     },
     responseInterceptor: (res) => {
