@@ -16,8 +16,12 @@ export default defineComponent({
     console.log('slots ==> ', slots);
 
     const handleClickTestRequest = async () => {
-      const res = await getHomeData();
-      console.log('res ==> ', res);
+      try {
+        const res = await getHomeData();
+        console.log('res ==> ', res);
+      } catch (error) {
+        console.log('error ==> ', error);
+      }
     };
     return () => {
       return (

@@ -96,13 +96,13 @@ const request = new HRequest({
           return Promise.reject(res);
         }
         // 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
-        if (data.returnCode && data.returnCode !== ResultCode.SUCCESS) {
-          alert(data); // 此处也可以使用组件提示报错信息
+        if (data.resultCode && data.resultCode !== ResultCode.SUCCESS) {
+          alert(data.displayMessage); // 此处也可以使用组件提示报错信息
           return Promise.reject(data);
         }
-        console.log('1 ==> ', 1);
         return Promise.resolve(data);
       } else {
+        alert(showMessage(data.code ?? status));
         return Promise.reject(data);
       }
     },
