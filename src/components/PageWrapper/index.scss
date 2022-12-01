@@ -4,6 +4,7 @@
   overflow-y: auto;
   background: $--color-background;
   padding-bottom: 112px;
+  position: relative;
 
   &-footer {
     position: fixed;
@@ -16,5 +17,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  &-menu {
+    position: absolute;
+    background: $--color-menu-bg-color;
+    top: 48px;
+    left: 24px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    svg {
+      color: $--color-title-text
+    }
   }
 }

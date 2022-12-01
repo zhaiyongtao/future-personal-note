@@ -1,5 +1,6 @@
 import { defineComponent, type PropType } from 'vue';
 import { Icon } from '@vicons/utils';
+import './index.scss';
 // 当 preserveValueImports 和 isolatedModules 一起打开时，明确引入的是类型时需要在类型前面明确的加入 type 关键字
 
 const SvgIconProps = {
@@ -21,7 +22,7 @@ export default defineComponent({
     console.log('props.src ==> ', props.src);
     return () => (
       <>
-        <Icon color={props.color} size={props.size}>
+        <Icon color={props.color} style={{ fontSize: `${props.size}px` }}>
           {props.src.render()}
         </Icon>
       </>

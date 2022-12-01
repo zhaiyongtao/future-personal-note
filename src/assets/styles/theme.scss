@@ -14,6 +14,7 @@ $--color-input-placeholder: $--color-primary-light-placeholder-text;
 $--color-input-icon-background: $--color-primary-dark;
 $--color-btn-background: $--color-primary-dark;
 $--color-page-footer-background: $--bg-color-content-B;
+$--color-menu-bg-color: $--bg-color-content-D;
 
 
 @media (prefers-color-scheme: dark) {
@@ -30,4 +31,5 @@ $--color-page-footer-background: $--bg-color-content-B;
   $--color-input-placeholder: $--color-primary-dark-placeholder-text;
   $--color-input-icon-background: $--color-brand-dark;
   $--color-btn-background: $--color-brand-dark;
+  $--color-menu-bg-color: $--bg-color-content-A;
 }

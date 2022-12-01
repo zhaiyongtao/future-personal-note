@@ -4,6 +4,13 @@ import { ResultCode, showMessage } from '@/utils/request/axiosStaus';
 import axios from 'axios';
 import qs from 'qs';
 
+import config from '../../../config';
+const NODE_ENV = import.meta.env.VITE_NODE_ENV as any;
+let BASE_URL = config.dev.baseUrl;
+if (NODE_ENV) {
+  BASE_URL = (config as any)[NODE_ENV].baseURL;
+}
+
 // 声明一个 Map 用于存储每个请求的标识 和 取消函数
 const pending = new Map();
 /**
@@ -61,8 +68,8 @@ export const clearPending = () => {
 
 // TODO 基础配置
 const request = new HRequest({
-  // baseURL: 'http://127.0.0.1:4523/m1/2005353-0-default',
-  timeout: 100000,
+  baseURL: BASE_URL,
+  timeout: 10000,
   // 跨域时允许携带凭证
   withCredentials: true,
 

@@ -27,6 +27,7 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
       }
     },
     server: {
+      port: 8899,
       proxy: {
         // 选项写法
         '/api': {

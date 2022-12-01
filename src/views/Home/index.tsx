@@ -32,7 +32,7 @@ export default defineComponent({
             {{
               content: () => (
                 <div>
-                  <NButton onClick={handleClickTestRequest}>{env}</NButton>
+                  {/* <NButton onClick={handleClickTestRequest}>{env}</NButton> */}
                   {/* <RouterView /> */}
                 </div>
               ),
