@@ -22,9 +22,7 @@ export default defineComponent({
     console.log('props.src ==> ', props.src);
     return () => (
       <>
-        <Icon color={props.color} style={{ fontSize: `${props.size}px` }}>
-          {props.src.render()}
-        </Icon>
+        <Icon color={props.color}>{props.src.render()}</Icon>
       </>
     );
   }
