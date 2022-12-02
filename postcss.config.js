@@ -12,7 +12,7 @@ module.exports = {
       grid: true
     },
     'postcss-pxtorem': {
-      rootValue: 37.5, // 这里配置37.5是为了和iphone6的css像素1:1还原,750px的设计稿就要除以2 来写px单位
+      rootValue: 37.5, // 这里配置37.5是为了和iphone6的css像素1:1还原,设计稿宽的1/10
       propList: ['*'],
       unitPrecision: 5
     }

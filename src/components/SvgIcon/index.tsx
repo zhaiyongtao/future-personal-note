@@ -1,4 +1,4 @@
-import { defineComponent, type PropType } from 'vue';
+import { defineComponent, h, type PropType } from 'vue';
 import { Icon } from '@vicons/utils';
 import './index.scss';
 // 当 preserveValueImports 和 isolatedModules 一起打开时，明确引入的是类型时需要在类型前面明确的加入 type 关键字
@@ -22,7 +22,17 @@ export default defineComponent({
     console.log('props.src ==> ', props.src);
     return () => (
       <>
-        <Icon color={props.color}>{props.src.render()}</Icon>
+        <Icon color={props.color}>
+          {/* <div */}
+          {/*  class="icon" */}
+          {/*  style={{ */}
+          {/*    width: `${Number(props.size) / 37.5}rem`, */}
+          {/*    height: `${Number(props.size) / 37.5}rem` */}
+          {/*  }}> */}
+          {/*  {h(props.src)} */}
+          {/* </div> */}
+          {/* {h(props.src)} */}
+        </Icon>
       </>
     );
   }

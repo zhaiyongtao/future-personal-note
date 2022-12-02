@@ -1150,7 +1150,7 @@
 
 "autoprefixer@^10.4.13":
   "integrity" "sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg=="
-  "resolved" "https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.13.tgz"
+  "resolved" "http://npm.nevint.com/repository/npm-all/autoprefixer/-/autoprefixer-10.4.13.tgz"
   "version" "10.4.13"
   dependencies:
     "browserslist" "^4.21.4"

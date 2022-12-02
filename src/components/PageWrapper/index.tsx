@@ -11,9 +11,9 @@ export default defineComponent({
     return () => {
       return (
         <div class="page-wrapper">
-          <div class="page-wrapper-menu" onClick={handleOpenMenu}>
-            <SvgIcon src={Icon_menu} size={24}></SvgIcon>
-          </div>
+          {/* <div class="page-wrapper-menu" onClick={handleOpenMenu}> */}
+          {/*  <SvgIcon src={Icon_menu} size={24}></SvgIcon> */}
+          {/* </div> */}
           <div>{slots.content ? slots.content() : <div>内容</div>}</div>
           <div class="page-wrapper-footer">{slots.footer ? slots.footer() : <div>底部</div>}</div>
         </div>

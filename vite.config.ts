@@ -26,6 +26,7 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
         }
       }
     },
+
     server: {
       port: 8899,
       proxy: {
