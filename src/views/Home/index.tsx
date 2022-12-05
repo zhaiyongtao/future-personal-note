@@ -1,12 +1,15 @@
 import { defineComponent, ref } from 'vue';
 import { RouterView } from 'vue-router';
-import PageWrapper from '@/components/PageWrapper';
-import { getHomeData } from '@/service';
 import { Button } from '@varlet/ui';
-import styles from './index.module.scss';
+import PageWrapper from '@/components/PageWrapper';
 import SvgIcon from '@/components/SvgIcon';
+
 import Icon_home from '@/assets/icons/Icon_home.vue';
 import Icon_home_add from '@/assets/icons/Icon_home_add.vue';
+import Icon_home_profile from '@/assets/icons/Icon_home_profile.vue';
+
+import { getHomeData } from '@/service';
+import styles from './index.module.scss';
 
 export default defineComponent({
   name: 'Home',
@@ -51,7 +54,7 @@ export default defineComponent({
                     <SvgIcon src={Icon_home_add} size={32}></SvgIcon>
                   </div>
                   <div class={styles['homeFooter-profile']}>
-                    <SvgIcon src={Icon_home_add} size={24}></SvgIcon>
+                    <SvgIcon src={Icon_home_profile} size={24}></SvgIcon>
                     profile
                   </div>
                 </div>
