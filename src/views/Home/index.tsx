@@ -2,7 +2,12 @@ import { defineComponent, ref } from 'vue';
 import { RouterView } from 'vue-router';
 import PageWrapper from '@/components/PageWrapper';
 import { getHomeData } from '@/service';
-import { NButton } from 'naive-ui';
+import { Button } from '@varlet/ui';
+import styles from './index.module.scss';
+import SvgIcon from '@/components/SvgIcon';
+import Icon_home from '@/assets/icons/Icon_home.vue';
+import Icon_home_add from '@/assets/icons/Icon_home_add.vue';
+
 export default defineComponent({
   name: 'Home',
   props: {},
@@ -32,11 +37,25 @@ export default defineComponent({
             {{
               content: () => (
                 <div>
-                  {/* <NButton onClick={handleClickTestRequest}>{env}</NButton> */}
                   {/* <RouterView /> */}
+                  <Button onClick={handleClickTestRequest}>点击</Button>
                 </div>
               ),
-              footer: () => <div>底部</div>
+              footer: () => (
+                <div class={styles.homeFooter}>
+                  <div class={styles['homeFooter-home']}>
+                    <SvgIcon src={Icon_home} size={24}></SvgIcon>
+                    首页
+                  </div>
+                  <div class={styles['homeFooter-add']}>
+                    <SvgIcon src={Icon_home_add} size={32}></SvgIcon>
+                  </div>
+                  <div class={styles['homeFooter-profile']}>
+                    <SvgIcon src={Icon_home_add} size={24}></SvgIcon>
+                    profile
+                  </div>
+                </div>
+              )
             }}
           </PageWrapper>
         </>

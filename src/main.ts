@@ -3,6 +3,7 @@ import { createPinia } from 'pinia';
 import 'amfe-flexible/index.js';
 import App from './App.vue';
 import router from './router';
+import '@varlet/ui/es/style.js';
 
 import './assets/styles/main.scss';
 import './utils/rem.js';

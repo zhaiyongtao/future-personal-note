@@ -22,7 +22,8 @@ export default defineComponent({
     console.log('props.src ==> ', props.src);
     return () => (
       <>
-        <Icon color={props.color}>
+        <Icon color={props.color} size={props.size}>
+          {h(props.src)}
           {/* <div */}
           {/*  class="icon" */}
           {/*  style={{ */}
