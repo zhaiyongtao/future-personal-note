@@ -1,5 +1,4 @@
 import { defineComponent, ref } from 'vue';
-import { NButton } from 'naive-ui';
 
 export default defineComponent({
   name: 'VueTemplateTest',
@@ -25,7 +24,6 @@ export default defineComponent({
         {this.slots.content ? this.slots.content() : <div>测试</div>}
         {this.slots.footer ? this.slots.footer({ props: '底部1' }) : <div>测试</div>}
         <div>{this.name}</div>
-        <NButton>test</NButton>
       </div>
     );
   }

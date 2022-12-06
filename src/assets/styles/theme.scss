@@ -15,6 +15,7 @@ $--color-input-icon-background: $--color-primary-dark;
 $--color-btn-background: $--color-primary-dark;
 $--color-page-footer-background: $--bg-color-content-B;
 $--color-menu-bg-color: $--bg-color-content-D;
+$--color-btn-font-color: $--color-primary-light;
 
 
 @media (prefers-color-scheme: dark) {
@@ -32,4 +33,5 @@ $--color-menu-bg-color: $--bg-color-content-D;
   $--color-input-icon-background: $--color-brand-dark;
   $--color-btn-background: $--color-brand-dark;
   $--color-menu-bg-color: $--bg-color-content-A;
+  $--color-btn-font-color: $--color-primary-dark;
 }
