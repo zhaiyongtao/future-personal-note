@@ -9,9 +9,14 @@ import Icon_home from '@/assets/icons/Icon_home.vue';
 import Icon_home_add from '@/assets/icons/Icon_home_add.vue';
 import Icon_home_profile from '@/assets/icons/Icon_home_profile.vue';
 
-import { getHomeData } from '@/service';
-import styles from './index.module.scss';
+// import { getHomeData } from '@/service';
+
 import ArticleCard from '@/components/ArticleCard';
+import FTag from '@/components/FTag';
+
+import styles from './index.module.scss';
+import './test.scss';
+import classNames from 'classnames';
 
 export default defineComponent({
   name: 'Home',
@@ -26,14 +31,24 @@ export default defineComponent({
     const name = ref<string>('zyt');
     expose({ name: name.value, handleClick });
     console.log('slots ==> ', slots);
+    const canClickTest = ref(true);
 
     const handleClickTestRequest = async () => {
-      try {
-        const res = await getHomeData();
-        console.log('res ==> ', res);
-      } catch (error) {
-        console.log('error ==> ', error);
+      if (canClickTest.value) {
+        canClickTest.value = false;
+        console.log("'可以点击' ==> ", '可以点击');
+        setTimeout(() => {
+          canClickTest.value = true;
+        }, 6000);
+      } else {
+        alert('1231');
       }
+      // try {
+      //   const res = await getHomeData();
+      //   console.log('res ==> ', res);
+      // } catch (error) {
+      //   console.log('error ==> ', error);
+      // }
     };
     return () => {
       return (
@@ -45,9 +60,29 @@ export default defineComponent({
                   <br />
                   <ArticleCategory></ArticleCategory>
                   <br />
-
                   <ArticleCard></ArticleCard>
+                  <br />
+                  <ArticleCard></ArticleCard>
+                  <br />
+                  <ArticleCard></ArticleCard>
+                  <br />
+                  <ArticleCard></ArticleCard>
+                  <br />
                   <Button onClick={handleClickTestRequest}>点击</Button>
+                  <FTag
+                    title={'测试'}
+                    className={classNames(
+                      {
+                        [styles.test]: true
+                      },
+                      'test'
+                    )}
+                  >
+                    {{
+                      prefix: () => <SvgIcon src={Icon_home}></SvgIcon>,
+                      suffix: () => 1231
+                    }}
+                  </FTag>
                 </div>
               ),
               footer: () => (

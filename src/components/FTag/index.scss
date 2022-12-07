@@ -1,0 +1,27 @@
+.fTag {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 58px;
+  width: fit-content;
+  border-radius: 100px;
+  background: $--color-menu-bg-color;
+  font-size: $--caption-2-font-size;
+  font-weight: $--font-weight-bold;
+  color: $--color-text;
+
+  &-title {
+
+  }
+
+  &-prefix {
+    margin-right: 8px;
+  }
+
+  &-suffix {
+
+  }
+}
+

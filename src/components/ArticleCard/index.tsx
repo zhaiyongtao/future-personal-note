@@ -4,6 +4,7 @@ import './index.scss';
 import { Image } from '@varlet/ui';
 import SvgIcon from '@/components/SvgIcon';
 import Icon_likes from '@/assets/icons/Icon_likes.vue';
+import FTag from '@/components/FTag';
 
 export default defineComponent({
   name: 'ArticleCard',
@@ -48,7 +49,9 @@ export default defineComponent({
                 radius={'16px'}
                 src="https://varlet.gitee.io/varlet-ui/cat.jpg"
               />
-              <div class="card-content__cover__tag">tag</div>
+              <div class="card-content__cover__tag">
+                <FTag title={`tag`}></FTag>
+              </div>
             </div>
           </div>
           <div class="card-footer">

@@ -1,23 +1,40 @@
 @import "./variable.scss";
 
-$--color-background: $--bg-color-light;
-$--color-text: $--color-primary-dark;
-$--color-title-text: $--color-primary-dark;
-$--color-card-background: $--bg-color-content-D;
+//$--color-background: $--bg-color-light;
+//$--color-text: $--color-primary-dark;
+//$--color-title-text: $--color-primary-dark;
+//$--color-card-background: $--bg-color-content-D;
+//$--color-card-comment-background: $--bg-color-content-C;
+//$--color-card-title-color: $--color-primary-dark;
+//$--color-card-content-color: $--color-primary-dark-content-text;
+//$--color-card-footer-color: $--color-brand-dark;
+//$--color-input-background: $--bg-color-content-C;
+//$--color-input-text: $--color-primary-dark-content-text;
+//$--color-input-placeholder: $--color-primary-light-placeholder-text;
+//$--color-input-icon-background: $--color-primary-dark;
+//$--color-btn-background: $--color-primary-dark;
+//$--color-page-footer-background: $--bg-color-content-B;
+//$--color-menu-bg-color: $--bg-color-content-D;
+//$--color-btn-font-color: $--color-primary-light;
+//$-color-desc-font-color: $--color-primary-light-placeholder-text;
+
+$--color-background: $--color-primary-dark;
+$--color-text: $--color-primary-light;
+$--color-title-text: $--color-primary-light;
+$--color-card-background: $--bg-color-content-E;
 $--color-card-comment-background: $--bg-color-content-C;
-$--color-card-title-color: $--color-primary-dark;
-$--color-card-content-color: $--color-primary-dark-content-text;
+$--color-card-title-color: $--color-primary-light;
+$--color-card-content-color: $--color-primary-light-content-text;
 $--color-card-footer-color: $--color-brand-dark;
 $--color-input-background: $--bg-color-content-C;
-$--color-input-text: $--color-primary-dark-content-text;
-$--color-input-placeholder: $--color-primary-light-placeholder-text;
-$--color-input-icon-background: $--color-primary-dark;
-$--color-btn-background: $--color-primary-dark;
-$--color-page-footer-background: $--bg-color-content-B;
-$--color-menu-bg-color: $--bg-color-content-D;
-$--color-btn-font-color: $--color-primary-light;
-
-
+$--color-input-text: $--color-primary-light-content-text;
+$--color-input-placeholder: $--color-primary-dark-placeholder-text;
+$--color-input-icon-background: $--color-brand-dark;
+$--color-btn-background: $--color-brand-dark;
+$--color-page-footer-background: $--bg-color-content-F;
+$--color-menu-bg-color: $--bg-color-content-A;
+$--color-btn-font-color: $--color-primary-dark;
+$-color-desc-font-color: $--color-primary-dark-placeholder-text;
 @media (prefers-color-scheme: dark) {
   $--color-background: $--color-primary-dark;
   $--color-text: $--color-primary-light;
@@ -34,4 +51,7 @@ $--color-btn-font-color: $--color-primary-light;
   $--color-btn-background: $--color-brand-dark;
   $--color-menu-bg-color: $--bg-color-content-A;
   $--color-btn-font-color: $--color-primary-dark;
+  $-color-desc-font-color: $--color-primary-dark-placeholder-text;
+
 }
+
