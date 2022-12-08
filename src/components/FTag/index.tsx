@@ -10,36 +10,38 @@ const FTagProps = {
   className: {
     type: String as PropType<string>
   },
-  isActived: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
+
   color: {
     type: Object as PropType<{
       fontColor: string;
       bgColor: string;
     }>
+  },
+  type: {
+    type: String as PropType<'normal' | 'small'>,
+    default: 'normal'
   }
 };
-
 export default defineComponent({
   name: '',
   props: FTagProps,
-  emits: ['click', 'update:isActived'],
+  emits: ['click'],
   setup(props, { expose, emit, slots }) {
-    const handleClick = () => {
-      emit('click', '张三');
+    const handleClick = (e: Event) => {
+      // e.preventDefault();
+      e.stopPropagation();
+      emit('click', e);
     };
-    const name = ref<string>('zyt');
-    expose({ name: name.value, handleClick });
-    console.log('slots ==> ', slots);
-
     // 根据传入进来的类名生成样式
     const wrapperClassName = () => {
       if (props.className) {
-        return classNames('fTag', props.className);
+        return classNames('fTag', props.className, {
+          'fTag-small': props.type === 'small'
+        });
       } else {
-        return 'fTag';
+        return classNames('fTag', {
+          'fTag-small': props.type === 'small'
+        });
       }
     };
 
@@ -52,6 +54,7 @@ export default defineComponent({
             background: color?.bgColor,
             color: color?.fontColor
           }}
+          onClick={handleClick}
         >
           {slots.prefix ? <div class="fTag-prefix">{slots.prefix()}</div> : null}
           <div class="fTag-title">{props.title}</div>

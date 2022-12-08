@@ -1,5 +1,6 @@
 import { defineComponent, type PropType, ref } from 'vue';
 import './index.scss';
+import FTag from '@/components/FTag';
 
 const ArticleCategoryProps = {
   categoryList: {
@@ -72,27 +73,39 @@ export default defineComponent({
     const handleClick = (e: any, item: { title: string; code: string; idx: number }) => {
       currentTag.value = item.idx;
       // 点击的元素水平平缓滚动到中间
-      const scrollLeft = e.target.offsetLeft - (window.innerWidth - e.target.offsetWidth) / 2;
-      e.target.parentNode.scrollTo({
+      const scrollLeft =
+        e.target.parentElement.offsetLeft -
+        (window.innerWidth - e.target.parentElement.offsetWidth) / 2 +
+        8 * item.idx;
+      console.log('scrollLeft ==> ', scrollLeft);
+      e.target.parentNode.parentElement.scrollTo({
         left: scrollLeft,
         behavior: 'smooth'
       });
       emit('change', item);
     };
-    // expose({ name: name.value, handleClick });
     return () => {
       return (
         <div class="articleWrapper">
           <ul class="articleWrapper__ul">
-            {props.categoryList?.map((item, index) => (
-              <li
-                class={currentTag.value === index ? 'active__li' : ''}
-                key={`tag-${index}`}
-                onClick={(e) => handleClick(e, item)}
-              >
-                {item.title}
-              </li>
-            ))}
+            {props.categoryList.map((item, index) => {
+              return (
+                <FTag
+                  title={item.title}
+                  key={`tag-${index}`}
+                  className={currentTag.value === index ? 'active__li' : ''}
+                  onClick={(e) => handleClick(e, item)}
+                ></FTag>
+              );
+            })}
+            {/* {props.categoryList?.map((item, index) => ( */}
+            {/*  <li */}
+            {/*    class={currentTag.value === index ? 'active__li' : ''} */}
+            {/*    key={`tag-${index}`} */}
+            {/*    onClick={(e) => handleClick(e, item)}> */}
+            {/*    {item.title} */}
+            {/*  </li> */}
+            {/* ))} */}
           </ul>
         </div>
       );

@@ -2,7 +2,7 @@ import { computed, defineComponent, onMounted, ref } from 'vue';
 
 // 使用defineComponent 定义组件,可以使用v-model
 export default defineComponent({
-  name: 'HomeArticleList',
+  name: 'ChildDemoWithModel',
   model: {
     prop: 'modelValue',
     event: 'update:modelValue'
@@ -16,7 +16,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, { expose, emit, slots }) {
     const handleClick = () => {
-      value.value = '123';
+      value.value = 'mgy';
     };
     const value = computed({
       get() {

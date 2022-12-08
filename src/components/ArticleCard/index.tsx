@@ -50,7 +50,22 @@ export default defineComponent({
                 src="https://varlet.gitee.io/varlet-ui/cat.jpg"
               />
               <div class="card-content__cover__tag">
-                <FTag title={`tag`}></FTag>
+                <FTag
+                  title={`tag`}
+                  type={'small'}
+                  color={{
+                    bgColor: '#E4E4E4',
+                    fontColor: '#000000'
+                  }}
+                >
+                  {{
+                    suffix: () => (
+                      <div class="card-content__cover__tag__icon">
+                        <SvgIcon src={Icon_likes} />
+                      </div>
+                    )
+                  }}
+                </FTag>
               </div>
             </div>
           </div>

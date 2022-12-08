@@ -1,3 +1,5 @@
+@import "src/assets/styles/mixin.scss";
+
 .card {
   display: flex;
   flex-direction: column;
@@ -77,14 +79,17 @@
         position: absolute;
         bottom: 16px;
         left: 16px;
-        padding: 0 8px;
-        width: 68px;
-        height: 16px;
         background: #E4E4E4;
         border-radius: 100px;
         font-weight: $--font-weight-bold;
         text-align: center;
         box-sizing: border-box;
+
+        &__icon {
+          margin-left: 6px;
+          height: fit-content;
+          @include flexCenter()
+        }
       }
     }
   }

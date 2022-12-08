@@ -17,6 +17,8 @@ import FTag from '@/components/FTag';
 import styles from './index.module.scss';
 import './test.scss';
 import classNames from 'classnames';
+import HomeArticleList from '@/views/components/HomeArticleList';
+import ParentDemoWithModel from '@/components/Demo/DemoWithModel/ParentDemoWithModel';
 
 export default defineComponent({
   name: 'Home',
@@ -57,6 +59,16 @@ export default defineComponent({
             {{
               content: () => (
                 <div class={styles.homeContent}>
+                  <ParentDemoWithModel></ParentDemoWithModel>
+                  <br />
+
+                  {name.value}
+                  <HomeArticleList
+                    v-model={name.value}
+                    onUpdate:modelValue={(val) => {
+                      console.log('name.value=>', name.value, val);
+                    }}
+                  ></HomeArticleList>
                   <br />
                   <ArticleCategory></ArticleCategory>
                   <br />
